@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>for mæm 🐾</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #fff7fb;
+    color: #4a3942;
+    overflow-x: hidden;
+  }
+  .bg-cat {
+    position: fixed;
+    font-size: 34px;
+    opacity: .13;
+    animation: float 5s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .c1 { left: 5%; top: 12%; animation-delay: 0s; }
+  .c2 { right: 7%; top: 20%; animation-delay: 1s; }
+  .c3 { left: 12%; bottom: 12%; animation-delay: 2s; }
+  .c4 { right: 13%; bottom: 9%; animation-delay: 3s; }
+
+  .wrap {
+    width: min(900px, 92%);
+    margin: auto;
+    position: relative;
+    z-index: 1;
+    padding: 38px 0 55px;
+  }
+  .card {
+    background: rgba(255,255,255,.9);
+    border: 1px solid #f1dce6;
+    border-radius: 28px;
+    padding: 32px 24px;
+    box-shadow: 0 18px 50px rgba(120, 70, 95, .12);
+    text-align: center;
+  }
+  .cat {
+    font-size: 70px;
+    display: inline-block;
+    animation: bounce 2.4s ease-in-out infinite;
+  }
+  h1 {
+    font-size: clamp(38px, 9vw, 68px);
+    margin: 8px 0 4px;
+    color: #b75d82;
+    letter-spacing: -2px;
+  }
+  .subtitle { color:#866b77; margin:0 auto 25px; font-size:16px; }
+  .message {
+    max-width: 680px;
+    margin: 0 auto;
+    line-height: 1.75;
+    font-size: 17px;
+  }
+  .highlight { color:#b75d82; font-weight:700; }
+  button {
+    border: 0;
+    border-radius: 999px;
+    padding: 14px 22px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    margin: 8px 5px;
+    background: #eaa5bf;
+    color: white;
+    box-shadow: 0 8px 20px rgba(183,93,130,.18);
+    transition: transform .2s, background .2s;
+  }
+  button:hover { transform: translateY(-3px) scale(1.02); background:#d98aaa; }
+  .secondary { background:#f4d6e2; color:#7c5667; }
+  .secret {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .7s ease, margin .4s ease;
+    margin: 0 auto;
+    max-width: 620px;
+  }
+  .secret.open { max-height: 300px; margin: 18px auto 0; }
+  .secret-box {
+    padding: 18px;
+    border-radius: 20px;
+    background:#fff0f6;
+    border:1px dashed #e2a7bf;
+  }
+  .cats {
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+    margin:25px auto;
+    max-width:650px;
+  }
+  .mini-cat {
+    width:64px; height:64px;
+    display:grid; place-items:center;
+    border-radius:18px;
+    background:#fff6fa;
+    border:1px solid #f0d9e4;
+    font-size:34px;
+    cursor:pointer;
+    transition:.2s;
+  }
+  .mini-cat:hover { transform:rotate(-5deg) translateY(-5px); }
+  .note {
+    min-height: 28px;
+    color:#9b647c;
+    font-weight:600;
+    margin-top:8px;
+  }
+  footer { margin-top:24px; font-size:13px; color:#a58b96; }
+  .heart {
+    position: fixed;
+    pointer-events:none;
+    font-size:22px;
+    animation: rise 1.7s ease-out forwards;
+    z-index:10;
+  }
+  @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-9px)} }
+  @keyframes float { 0%,100%{transform:translateY(0) rotate(-4deg)} 50%{transform:translateY(-15px) rotate(5deg)} }
+  @keyframes rise { from{opacity:1; transform:translateY(0) scale(1)} to{opacity:0; transform:translateY(-150px) scale(1.5)} }
+</style>
+</head>
+<body>
+  <div class="bg-cat c1">🐱</div><div class="bg-cat c2">🐈</div>
+  <div class="bg-cat c3">🐾</div><div class="bg-cat c4">😺</div>
+
+  <main class="wrap">
+    <section class="card">
+      <div class="cat">🐱</div>
+      <h1>I'm sorry, mæm.</h1>
+      <p class="subtitle">a tiny website from someone who really, really misses you</p>
+
+      <div class="message">
+        <p>mæm, I'm really sorry about the things I said last night.</p>
+        <p>I know I wasn't mindful enough with my words, and I honestly <span class="highlight">didn't mean to make you upset</span> or make you feel bad in any way. I wish I had thought more carefully before I said those things.</p>
+        <p>I'll do better. I'll be more mindful of the words I say and how they might make you feel, because the last thing I want is to hurt you because of something I could've said better.</p>
+        <p>And uhm... <span class="highlight">I miss you so bad na. 😭</span></p>
+        <p>So, I'm sorry, mæm. 🥺🐾</p>
+      </div>
+
+      <div>
+        <button onclick="apology()">tap me, mæm 🐾</button>
+        <button class="secondary" onclick="toggleSecret()">one more thing...</button>
+      </div>
+
+      <div id="secret" class="secret">
+        <div class="secret-box">
+          <strong>okay last na talaga 😭</strong><br><br>
+          I don't expect you to instantly feel okay. I just want you to know that I'm genuinely sorry, and I care about you a lot. Take your time, mæm. I'm here. 🤍
+        </div>
+      </div>
+
+      <div class="cats">
+        <div class="mini-cat" onclick="catMsg(0)">🐱</div>
+        <div class="mini-cat" onclick="catMsg(1)">😺</div>
+        <div class="mini-cat" onclick="catMsg(2)">😽</div>
+        <div class="mini-cat" onclick="catMsg(3)">🐈</div>
+        <div class="mini-cat" onclick="catMsg(4)">🐾</div>
+        <div class="mini-cat" onclick="catMsg(5)">😿</div>
+      </div>
+      <div id="note" class="note">click a cat 🐾</div>
+
+      <footer>made with apologies, cats, and a very missed mæm ♡</footer>
+    </section>
+  </main>
+
+<script>
+const messages = [
+  "this cat says: I'm sorry, mæm. 🥺",
+  "this one says: please don't let my dumb words win 😭",
+  "she says: I really didn't mean to upset you. 🤍",
+  "cat translation: I miss mæm very, very much.",
+  "official cat verdict: think before speaking next time, hooman. 🐾",
+  "even this cat knows I messed up 😿"
+];
+
+function catMsg(i) {
+  document.getElementById("note").textContent = messages[i];
+  hearts(3);
+}
+
+function toggleSecret() {
+  document.getElementById("secret").classList.toggle("open");
+  hearts(4);
+}
+
+function apology() {
+  hearts(14);
+  document.querySelector("button").textContent = "I'M REALLY SORRY, MÆM 🥺";
+  document.getElementById("note").textContent = "okay... I miss you na talaga. 😭🤍";
+}
+
+function hearts(n) {
+  for (let i=0;i<n;i++) {
+    const h = document.createElement("div");
+    h.className = "heart";
+    h.textContent = ["🤍","💗","🐾","♡"][Math.floor(Math.random()*4)];
+    h.style.left = (20 + Math.random()*60) + "vw";
+    h.style.top = (55 + Math.random()*20) + "vh";
+    h.style.animationDelay = (Math.random()*.25) + "s";
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(), 1900);
+  }
+}
+</script>
+</body>
+</html>
